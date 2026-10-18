@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Sparkles, MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
-import { getWhatsAppUrl } from '../data/content';
+import { getWhatsAppUrl, heroBraidsImg } from '../data/content';
 
 export const Hero: React.FC = () => {
   return (
@@ -143,7 +143,13 @@ export const Hero: React.FC = () => {
               {/* Main Image Container */}
               <div className="relative rounded-3xl overflow-hidden bg-[#FDF1E8] border-2 border-[#E29578]/50 shadow-xl aspect-[3/4] group">
                 <img
-                  src="/src/assets/images/hero_braids_portrait_1792341019972.jpg"
+                  src={heroBraidsImg || '/images/hero_braids_portrait_1792341019972.jpg'}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== '/images/hero_braids_portrait_1792341019972.jpg') {
+                      target.src = '/images/hero_braids_portrait_1792341019972.jpg';
+                    }
+                  }}
                   alt="Model showcasing signature SOMMY XBELLA goddess braids with golden accents"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                   referrerPolicy="no-referrer"

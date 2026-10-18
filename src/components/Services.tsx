@@ -56,6 +56,12 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#FDF1E8]">
                   <img
                     src={service.image}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (service.fallbackImage && target.src !== service.fallbackImage) {
+                        target.src = service.fallbackImage;
+                      }
+                    }}
                     alt={service.name}
                     className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700 ease-out"
                     referrerPolicy="no-referrer"

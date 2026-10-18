@@ -98,6 +98,12 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
               src={item.image}
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (item.fallbackImage && target.src !== item.fallbackImage) {
+                  target.src = item.fallbackImage;
+                }
+              }}
               alt={item.title}
               className="max-h-[62vh] w-auto max-w-full object-contain mx-auto"
               referrerPolicy="no-referrer"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { getWhatsAppUrl } from '../data/content';
+import { getWhatsAppUrl, aboutStylistImg } from '../data/content';
 
 export const About: React.FC = () => {
   return (
@@ -25,7 +25,13 @@ export const About: React.FC = () => {
 
               <div className="relative rounded-3xl overflow-hidden bg-[#FDF1E8] border-2 border-[#E29578]/50 shadow-xl aspect-[4/5] group">
                 <img
-                  src="/src/assets/images/about_stylist_portrait_1792341041595.jpg"
+                  src={aboutStylistImg || '/images/about_stylist_portrait_1792341041595.jpg'}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== '/images/about_stylist_portrait_1792341041595.jpg') {
+                      target.src = '/images/about_stylist_portrait_1792341041595.jpg';
+                    }
+                  }}
                   alt="SOMMY XBELLA founder and stylist in the beauty and styling atelier"
                   className="w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700 ease-out"
                   referrerPolicy="no-referrer"

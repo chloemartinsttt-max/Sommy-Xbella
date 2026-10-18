@@ -122,6 +122,12 @@ export const Gallery: React.FC = () => {
                 <div className="aspect-[3/4] overflow-hidden bg-[#FDF1E8]">
                   <img
                     src={item.image}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (item.fallbackImage && target.src !== item.fallbackImage) {
+                        target.src = item.fallbackImage;
+                      }
+                    }}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
                     referrerPolicy="no-referrer"
