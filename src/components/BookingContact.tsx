@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, Phone, Calendar, Clock, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion } from 'motion/react';
-import { BRAND_PHONE, BRAND_PHONE_CLEAN, WHATSAPP_BASE_URL, SERVICES } from '../data/content';
+import { BRAND_PHONE, BRAND_PHONE_CLEAN, WHATSAPP_BASE_URL, SERVICES, logoImg } from '../data/content';
 
 interface BookingContactProps {
   preselectedService?: string;
@@ -108,9 +108,9 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
   const todayStr = new Date().toISOString().split('T')[0];
 
   return (
-    <section id="contact" className="py-24 bg-[#FBF0E8] relative overflow-hidden">
+    <section id="contact" className="py-24 bg-[#FBF0E8] dark:bg-[#000000] relative overflow-hidden transition-colors duration-300">
       {/* Decorative hairline */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#E29578]/30 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#E29578]/30 dark:via-neutral-800 to-transparent" />
 
       <div id="booking" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -121,15 +121,15 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
-          <div className="inline-flex items-center justify-center gap-1.5 text-xs uppercase tracking-[0.22em] text-[#A95437] font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-[#D47A5B]" />
+          <div className="inline-flex items-center justify-center gap-1.5 text-xs uppercase tracking-[0.22em] text-[#A95437] dark:text-[#D4A64A] font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A]" />
             <span>Consultation & Appointments</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#2B160E] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#2B160E] dark:text-white tracking-tight">
             Ready for Your Next Look?
           </h2>
-          <div className="w-16 h-0.5 bg-[#D47A5B] mx-auto my-3" />
-          <p className="text-[#55392D] text-base sm:text-lg font-light leading-relaxed">
+          <div className="w-16 h-0.5 bg-[#D47A5B] dark:bg-[#D4A64A] mx-auto my-3" />
+          <p className="text-[#55392D] dark:text-neutral-300 text-base sm:text-lg font-light leading-relaxed">
             Let's create a look you'll love. Contact SOMMY XBELLA to discuss your preferred service
             and arrange your appointment.
           </p>
@@ -144,15 +144,15 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
             transition={{ duration: 0.5 }}
             className="lg:col-span-5 space-y-8"
           >
-            <div className="p-8 rounded-3xl bg-[#FFFFFF] border border-[#F0D5C4] luxury-card-shadow space-y-6">
+            <div className="p-8 rounded-3xl bg-[#FFFFFF] dark:bg-[#0E0E0E] border border-[#F0D5C4] dark:border-neutral-800 luxury-card-shadow space-y-6">
               <div className="space-y-2">
-                <span className="text-[11px] uppercase tracking-widest text-[#A95437] font-bold block">
+                <span className="text-[11px] uppercase tracking-widest text-[#A95437] dark:text-[#D4A64A] font-bold block">
                   Fastest Booking Method
                 </span>
-                <h3 className="text-2xl font-serif font-bold text-[#2B160E]">
+                <h3 className="text-2xl font-serif font-bold text-[#2B160E] dark:text-white">
                   Chat Directly with Sommy
                 </h3>
-                <p className="text-sm text-[#55392D] font-light leading-relaxed">
+                <p className="text-sm text-[#55392D] dark:text-neutral-300 font-light leading-relaxed">
                   WhatsApp is our primary and quickest communication channel. Chat with us directly to send style inspiration, ask questions, or lock in your appointment slot.
                 </p>
               </div>
@@ -171,18 +171,18 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
               </motion.a>
 
               {/* Contact Card */}
-              <div className="pt-4 border-t border-[#F5E5DC] space-y-4">
+              <div className="pt-4 border-t border-[#F5E5DC] dark:border-neutral-800 space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-2xl bg-[#FDF1E8] border border-[#E29578]/50 flex items-center justify-center text-[#D47A5B] shrink-0">
+                  <div className="w-11 h-11 rounded-2xl bg-[#FDF1E8] dark:bg-neutral-900 border border-[#E29578]/50 dark:border-neutral-700 flex items-center justify-center text-[#D47A5B] dark:text-[#D4A64A] shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-[#846658]">
+                    <p className="text-xs uppercase tracking-wider text-[#846658] dark:text-neutral-400">
                       WhatsApp / Phone
                     </p>
                     <a
                       href={`tel:+${BRAND_PHONE_CLEAN}`}
-                      className="text-base sm:text-lg font-serif font-bold text-[#2B160E] hover:text-[#D47A5B] transition-colors"
+                      className="text-base sm:text-lg font-serif font-bold text-[#2B160E] dark:text-white hover:text-[#D47A5B] dark:hover:text-[#D4A64A] transition-colors"
                     >
                       {BRAND_PHONE}
                     </a>
@@ -190,17 +190,17 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-2xl bg-[#FDF1E8] border border-[#E29578]/50 flex items-center justify-center text-[#D47A5B] shrink-0">
+                  <div className="w-11 h-11 rounded-2xl bg-[#FDF1E8] dark:bg-neutral-900 border border-[#E29578]/50 dark:border-neutral-700 flex items-center justify-center text-[#D47A5B] dark:text-[#D4A64A] shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-[#846658]">
+                    <p className="text-xs uppercase tracking-wider text-[#846658] dark:text-neutral-400">
                       Appointment Schedule
                     </p>
-                    <p className="text-sm text-[#2B160E] font-medium">
+                    <p className="text-sm text-[#2B160E] dark:text-white font-medium">
                       By Appointment & Reservation
                     </p>
-                    <p className="text-xs text-[#846658]">
+                    <p className="text-xs text-[#846658] dark:text-neutral-400">
                       Monday – Saturday sessions available
                     </p>
                   </div>
@@ -209,11 +209,11 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
             </div>
 
             {/* Reassurance Banner */}
-            <div className="p-6 rounded-2xl bg-[#FFFFFF]/80 border border-[#F0D5C4] space-y-2 shadow-xs">
-              <h4 className="text-sm font-serif font-bold text-[#A95437]">
+            <div className="p-6 rounded-2xl bg-[#FFFFFF]/80 dark:bg-[#0E0E0E]/90 border border-[#F0D5C4] dark:border-neutral-800 space-y-2 shadow-xs">
+              <h4 className="text-sm font-serif font-bold text-[#A95437] dark:text-[#D4A64A]">
                 Studio Location & Visit Policy
               </h4>
-              <p className="text-xs text-[#55392D] leading-relaxed font-light">
+              <p className="text-xs text-[#55392D] dark:text-neutral-300 leading-relaxed font-light">
                 To guarantee personalized attention and uninterrupted one-on-one sessions for each client, our studio location and fitting details are shared directly upon booking confirmation.
               </p>
             </div>
@@ -227,7 +227,7 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
             transition={{ duration: 0.5 }}
             className="lg:col-span-7"
           >
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#FFFFFF] border border-[#F0D5C4] luxury-card-shadow">
+            <div className="p-8 sm:p-10 rounded-3xl bg-[#FFFFFF] dark:bg-[#0E0E0E] border border-[#F0D5C4] dark:border-neutral-800 luxury-card-shadow">
               {submittedBooking ? (
                 /* Success State with WhatsApp dispatch */
                 <motion.div
@@ -240,37 +240,45 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-serif font-bold text-[#2B160E]">
+                    <h3 className="text-2xl font-serif font-bold text-[#2B160E] dark:text-white">
                       Appointment Details Ready!
                     </h3>
-                    <p className="text-sm text-[#55392D] font-light max-w-md mx-auto">
-                      Thank you, <strong className="text-[#2B160E]">{submittedBooking.fullName}</strong>.
+                    <p className="text-sm text-[#55392D] dark:text-neutral-300 font-light max-w-md mx-auto">
+                      Thank you, <strong className="text-[#2B160E] dark:text-white">{submittedBooking.fullName}</strong>.
                       To instantly lock in your appointment with SOMMY XBELLA, click below to confirm via WhatsApp:
                     </p>
                   </div>
 
                   {/* Summary Slip */}
-                  <div className="p-5 rounded-2xl bg-[#FFF7F2] border border-[#F0D5C4] text-left space-y-2 text-xs sm:text-sm text-[#2B160E]">
-                    <div className="flex justify-between py-1 border-b border-[#F0D5C4]">
-                      <span className="text-[#846658]">Service:</span>
-                      <span className="font-semibold text-[#2B160E]">{submittedBooking.service}</span>
+                  <div className="p-5 rounded-2xl bg-[#FFF7F2] dark:bg-black border border-[#F0D5C4] dark:border-neutral-800 text-left space-y-2 text-xs sm:text-sm text-[#2B160E] dark:text-neutral-100">
+                    <div className="flex items-center gap-2.5 pb-2.5 mb-2 border-b border-[#F0D5C4] dark:border-neutral-800">
+                      <div className="w-7 h-7 rounded-full overflow-hidden border border-[#D47A5B] dark:border-[#D4A64A] shrink-0 bg-black">
+                        <img src={logoImg || '/images/logo.jpg'} alt="SOMMY XBELLA" className="w-full h-full object-cover" />
+                      </div>
+                      <span className="font-brand-display text-xs font-bold tracking-[0.16em] text-[#2B160E] dark:text-white">
+                        SOMMY XBELLA APPOINTMENT SLIP
+                      </span>
                     </div>
-                    <div className="flex justify-between py-1 border-b border-[#F0D5C4]">
-                      <span className="text-[#846658]">Date:</span>
-                      <span className="font-semibold text-[#2B160E]">{submittedBooking.date}</span>
+                    <div className="flex justify-between py-1 border-b border-[#F0D5C4] dark:border-neutral-800">
+                      <span className="text-[#846658] dark:text-neutral-400">Service:</span>
+                      <span className="font-semibold text-[#2B160E] dark:text-white">{submittedBooking.service}</span>
                     </div>
-                    <div className="flex justify-between py-1 border-b border-[#F0D5C4]">
-                      <span className="text-[#846658]">Time Window:</span>
-                      <span className="font-semibold text-[#2B160E]">{submittedBooking.timePreference}</span>
+                    <div className="flex justify-between py-1 border-b border-[#F0D5C4] dark:border-neutral-800">
+                      <span className="text-[#846658] dark:text-neutral-400">Date:</span>
+                      <span className="font-semibold text-[#2B160E] dark:text-white">{submittedBooking.date}</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#F0D5C4] dark:border-neutral-800">
+                      <span className="text-[#846658] dark:text-neutral-400">Time Window:</span>
+                      <span className="font-semibold text-[#2B160E] dark:text-white">{submittedBooking.timePreference}</span>
                     </div>
                     <div className="flex justify-between py-1">
-                      <span className="text-[#846658]">Phone:</span>
-                      <span className="font-semibold text-[#2B160E]">{submittedBooking.phone}</span>
+                      <span className="text-[#846658] dark:text-neutral-400">Phone:</span>
+                      <span className="font-semibold text-[#2B160E] dark:text-white">{submittedBooking.phone}</span>
                     </div>
                     {submittedBooking.notes && (
-                      <div className="pt-2 border-t border-[#F0D5C4] text-xs">
-                        <span className="text-[#846658] block">Notes:</span>
-                        <p className="italic text-[#2B160E] mt-0.5">{submittedBooking.notes}</p>
+                      <div className="pt-2 border-t border-[#F0D5C4] dark:border-neutral-800 text-xs">
+                        <span className="text-[#846658] dark:text-neutral-400 block">Notes:</span>
+                        <p className="italic text-[#2B160E] dark:text-white mt-0.5">{submittedBooking.notes}</p>
                       </div>
                     )}
                   </div>
@@ -292,32 +300,32 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                     <button
                       type="button"
                       onClick={handleReset}
-                      className="text-xs text-[#846658] hover:text-[#D47A5B] transition-colors underline pt-2"
+                      className="text-xs text-[#846658] dark:text-neutral-400 hover:text-[#D47A5B] dark:hover:text-[#D4A64A] transition-colors underline pt-2"
                     >
                       Submit another inquiry or change details
                     </button>
                   </div>
 
-                  <p className="text-[11px] text-[#846658] italic">
+                  <p className="text-[11px] text-[#846658] dark:text-neutral-400 italic">
                     Note: Direct WhatsApp confirmation secures your date and time immediately. Form entries are not sent to a remote server.
                   </p>
                 </motion.div>
               ) : (
                 /* Interactive Booking Form */
                 <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                  <div className="border-b border-[#F5E5DC] pb-4">
-                    <h3 className="text-xl font-serif font-bold text-[#2B160E]">
+                  <div className="border-b border-[#F5E5DC] dark:border-neutral-800 pb-4">
+                    <h3 className="text-xl font-serif font-bold text-[#2B160E] dark:text-white">
                       Schedule Your Appointment
                     </h3>
-                    <p className="text-xs text-[#846658] mt-1 font-light">
+                    <p className="text-xs text-[#846658] dark:text-neutral-400 mt-1 font-light">
                       Fill out your preferred details below, and we'll format your inquiry directly for WhatsApp confirmation.
                     </p>
                   </div>
 
                   {/* Full Name */}
                   <div className="space-y-1.5">
-                    <label htmlFor="fullName" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D]">
-                      Full Name <span className="text-[#D47A5B]">*</span>
+                    <label htmlFor="fullName" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D] dark:text-neutral-200">
+                      Full Name <span className="text-[#D47A5B] dark:text-[#D4A64A]">*</span>
                     </label>
                     <input
                       id="fullName"
@@ -328,9 +336,9 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                         if (errors.fullName) setErrors({ ...errors, fullName: '' });
                       }}
                       placeholder="e.g. Somtochukwu Adebayo"
-                      className={`w-full px-4 py-3 rounded-xl bg-[#FFF7F2] border ${
-                        errors.fullName ? 'border-rose-500 focus:ring-rose-500' : 'border-[#F0D5C4] focus:border-[#D47A5B]'
-                      } text-[#2B160E] placeholder-[#846658]/40 text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] transition-all`}
+                      className={`w-full px-4 py-3 rounded-xl bg-[#FFF7F2] dark:bg-black border ${
+                        errors.fullName ? 'border-rose-500 focus:ring-rose-500' : 'border-[#F0D5C4] dark:border-neutral-800 focus:border-[#D47A5B] dark:focus:border-[#D4A64A]'
+                      } text-[#2B160E] dark:text-white placeholder-[#846658]/40 dark:placeholder-neutral-600 text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] dark:focus:ring-[#D4A64A] transition-all`}
                     />
                     {errors.fullName && (
                       <p className="text-xs text-rose-500 flex items-center gap-1 mt-1">
@@ -342,8 +350,8 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
 
                   {/* Phone / WhatsApp Number */}
                   <div className="space-y-1.5">
-                    <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D]">
-                      Phone Number / WhatsApp <span className="text-[#D47A5B]">*</span>
+                    <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D] dark:text-neutral-200">
+                      Phone Number / WhatsApp <span className="text-[#D47A5B] dark:text-[#D4A64A]">*</span>
                     </label>
                     <input
                       id="phone"
@@ -354,9 +362,9 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                         if (errors.phone) setErrors({ ...errors, phone: '' });
                       }}
                       placeholder="+234 800 000 0000"
-                      className={`w-full px-4 py-3 rounded-xl bg-[#FFF7F2] border ${
-                        errors.phone ? 'border-rose-500 focus:ring-rose-500' : 'border-[#F0D5C4] focus:border-[#D47A5B]'
-                      } text-[#2B160E] placeholder-[#846658]/40 text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] transition-all`}
+                      className={`w-full px-4 py-3 rounded-xl bg-[#FFF7F2] dark:bg-black border ${
+                        errors.phone ? 'border-rose-500 focus:ring-rose-500' : 'border-[#F0D5C4] dark:border-neutral-800 focus:border-[#D47A5B] dark:focus:border-[#D4A64A]'
+                      } text-[#2B160E] dark:text-white placeholder-[#846658]/40 dark:placeholder-neutral-600 text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] dark:focus:ring-[#D4A64A] transition-all`}
                     />
                     {errors.phone && (
                       <p className="text-xs text-rose-500 flex items-center gap-1 mt-1">
@@ -368,8 +376,8 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
 
                   {/* Preferred Service */}
                   <div className="space-y-1.5">
-                    <label htmlFor="service" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D]">
-                      Preferred Service <span className="text-[#D47A5B]">*</span>
+                    <label htmlFor="service" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D] dark:text-neutral-200">
+                      Preferred Service <span className="text-[#D47A5B] dark:text-[#D4A64A]">*</span>
                     </label>
                     <select
                       id="service"
@@ -378,10 +386,10 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                         setFormData({ ...formData, service: e.target.value });
                         if (errors.service) setErrors({ ...errors, service: '' });
                       }}
-                      className="w-full px-4 py-3 rounded-xl bg-[#FFF7F2] border border-[#F0D5C4] text-[#2B160E] text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] focus:border-[#D47A5B] transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-[#FFF7F2] dark:bg-black border border-[#F0D5C4] dark:border-neutral-800 text-[#2B160E] dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] dark:focus:ring-[#D4A64A] focus:border-[#D47A5B] dark:focus:border-[#D4A64A] transition-all"
                     >
                       {SERVICES.map((s) => (
-                        <option key={s.id} value={s.name} className="bg-white text-[#2B160E]">
+                        <option key={s.id} value={s.name} className="bg-white dark:bg-black text-[#2B160E] dark:text-white">
                           {s.name}
                         </option>
                       ))}
@@ -397,8 +405,8 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                   {/* Date & Time Window */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label htmlFor="date" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D]">
-                        Preferred Date <span className="text-[#D47A5B]">*</span>
+                      <label htmlFor="date" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D] dark:text-neutral-200">
+                        Preferred Date <span className="text-[#D47A5B] dark:text-[#D4A64A]">*</span>
                       </label>
                       <input
                         id="date"
@@ -409,9 +417,9 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                           setFormData({ ...formData, date: e.target.value });
                           if (errors.date) setErrors({ ...errors, date: '' });
                         }}
-                        className={`w-full px-4 py-3 rounded-xl bg-[#FFF7F2] border ${
-                          errors.date ? 'border-rose-500 focus:ring-rose-500' : 'border-[#F0D5C4] focus:border-[#D47A5B]'
-                        } text-[#2B160E] text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] transition-all`}
+                        className={`w-full px-4 py-3 rounded-xl bg-[#FFF7F2] dark:bg-black border ${
+                          errors.date ? 'border-rose-500 focus:ring-rose-500' : 'border-[#F0D5C4] dark:border-neutral-800 focus:border-[#D47A5B] dark:focus:border-[#D4A64A]'
+                        } text-[#2B160E] dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] dark:focus:ring-[#D4A64A] transition-all`}
                       />
                       {errors.date && (
                         <p className="text-xs text-rose-500 flex items-center gap-1 mt-1">
@@ -422,22 +430,22 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                     </div>
 
                     <div className="space-y-1.5">
-                      <label htmlFor="timePreference" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D]">
+                      <label htmlFor="timePreference" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D] dark:text-neutral-200">
                         Time Preference
                       </label>
                       <select
                         id="timePreference"
                         value={formData.timePreference}
                         onChange={(e) => setFormData({ ...formData, timePreference: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#FFF7F2] border border-[#F0D5C4] text-[#2B160E] text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] focus:border-[#D47A5B] transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-[#FFF7F2] dark:bg-black border border-[#F0D5C4] dark:border-neutral-800 text-[#2B160E] dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] dark:focus:ring-[#D4A64A] focus:border-[#D47A5B] dark:focus:border-[#D4A64A] transition-all"
                       >
-                        <option value="Morning (10:00 AM - 1:00 PM)" className="bg-white text-[#2B160E]">
+                        <option value="Morning (10:00 AM - 1:00 PM)" className="bg-white dark:bg-black text-[#2B160E] dark:text-white">
                           Morning (10:00 AM - 1:00 PM)
                         </option>
-                        <option value="Afternoon (1:00 PM - 4:00 PM)" className="bg-white text-[#2B160E]">
+                        <option value="Afternoon (1:00 PM - 4:00 PM)" className="bg-white dark:bg-black text-[#2B160E] dark:text-white">
                           Afternoon (1:00 PM - 4:00 PM)
                         </option>
-                        <option value="Evening (4:00 PM - 7:00 PM)" className="bg-white text-[#2B160E]">
+                        <option value="Evening (4:00 PM - 7:00 PM)" className="bg-white dark:bg-black text-[#2B160E] dark:text-white">
                           Evening (4:00 PM - 7:00 PM)
                         </option>
                       </select>
@@ -446,7 +454,7 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
 
                   {/* Additional Details */}
                   <div className="space-y-1.5">
-                    <label htmlFor="notes" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D]">
+                    <label htmlFor="notes" className="block text-xs font-semibold uppercase tracking-wider text-[#55392D] dark:text-neutral-200">
                       Additional Details (Optional)
                     </label>
                     <textarea
@@ -455,7 +463,7 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="Specify your desired braid length, lash volume, outfit design idea, or special requirements..."
-                      className="w-full px-4 py-3 rounded-xl bg-[#FFF7F2] border border-[#F0D5C4] text-[#2B160E] placeholder-[#846658]/40 text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] focus:border-[#D47A5B] transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-[#FFF7F2] dark:bg-black border border-[#F0D5C4] dark:border-neutral-800 text-[#2B160E] dark:text-white placeholder-[#846658]/40 dark:placeholder-neutral-600 text-sm focus:outline-none focus:ring-1 focus:ring-[#D47A5B] dark:focus:ring-[#D4A64A] focus:border-[#D47A5B] dark:focus:border-[#D4A64A] transition-all"
                     />
                   </div>
 
@@ -464,13 +472,13 @@ export const BookingContact: React.FC<BookingContactProps> = ({ preselectedServi
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D47A5B] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-[#BF6545] active:bg-[#A95437] transition-all duration-200 shadow-md hover:shadow-lg"
+                    className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D47A5B] dark:bg-[#D4A64A] text-white dark:text-black font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-[#BF6545] dark:hover:bg-[#E7C275] active:bg-[#A95437] transition-all duration-200 shadow-md hover:shadow-lg"
                   >
-                    <Calendar className="w-4 h-4 text-white" />
+                    <Calendar className="w-4 h-4 text-current" />
                     <span>Review & Format Appointment Request</span>
                   </motion.button>
 
-                  <p className="text-center text-[11px] text-[#846658] font-light">
+                  <p className="text-center text-[11px] text-[#846658] dark:text-neutral-400 font-light">
                     Direct WhatsApp consultation guarantees priority confirmation. Form submissions format your message without storing data on a remote server.
                   </p>
                 </form>

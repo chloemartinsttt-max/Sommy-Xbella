@@ -17,7 +17,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF7F2] text-[#2B160E] flex flex-col selection:bg-[#F5C7B0] selection:text-[#2B160E]">
+    <div className="min-h-screen bg-[#FFF7F2] dark:bg-[#000000] text-[#2B160E] dark:text-[#F5F5F5] flex flex-col selection:bg-[#F5C7B0] dark:selection:bg-[#D4A64A] selection:text-[#2B160E] dark:selection:text-[#000000] transition-colors duration-300">
       {/* Navigation Bar */}
       <Navbar />
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { ArrowRight, Sparkles, MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
-import { getWhatsAppUrl, heroBraidsImg } from '../data/content';
+import { getWhatsAppUrl, heroBraidsImg, logoImg } from '../data/content';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative pt-28 sm:pt-36 pb-20 md:pb-28 bg-[#FFF7F2] overflow-hidden">
+    <section id="home" className="relative pt-28 sm:pt-36 pb-20 md:pb-28 bg-[#FFF7F2] dark:bg-[#000000] overflow-hidden transition-colors duration-300">
       {/* Decorative ambient background glows */}
       <motion.div
         animate={{
@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#FDE2D2] rounded-full blur-3xl pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#FDE2D2] dark:bg-[#D4A64A]/5 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"
       />
       <motion.div
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
           ease: 'easeInOut',
           delay: 1,
         }}
-        className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[#FCD7C2] rounded-full blur-2xl pointer-events-none"
+        className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[#FCD7C2] dark:bg-neutral-900/30 rounded-full blur-2xl pointer-events-none"
         aria-hidden="true"
       />
 
@@ -44,15 +44,19 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 flex flex-col justify-center space-y-8 text-left"
           >
-            {/* Elegant Tagline */}
+            {/* Elegant Tagline with Brand Logo */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-[#A95437]"
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-neutral-900/90 backdrop-blur-xs border border-[#F0D5C4] dark:border-neutral-800 shadow-xs w-fit"
             >
-              <Sparkles className="w-4 h-4 text-[#D47A5B]" />
-              <span>Sommy Xbella Atelier & Beauty Studio</span>
+              <div className="w-5 h-5 rounded-full overflow-hidden border border-[#D47A5B] dark:border-[#D4A64A] shrink-0 bg-black">
+                <img src={logoImg || '/images/logo.jpg'} alt="SOMMY XBELLA" className="w-full h-full object-cover" />
+              </div>
+              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#A95437] dark:text-[#D4A64A]">
+                SOMMY XBELLA Atelier & Beauty Studio
+              </span>
             </motion.div>
 
             {/* Hero Headline */}
@@ -60,10 +64,10 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#2B160E] leading-[1.14] tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#2B160E] dark:text-white leading-[1.14] tracking-tight"
             >
               Beauty That Speaks{' '}
-              <span className="italic font-normal text-[#D47A5B] block sm:inline">
+              <span className="italic font-normal text-[#D47A5B] dark:text-[#D4A64A] block sm:inline">
                 for Itself.
               </span>
             </motion.h1>
@@ -73,10 +77,10 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-base sm:text-lg text-[#55392D] leading-relaxed max-w-2xl font-light"
+              className="text-base sm:text-lg text-[#55392D] dark:text-neutral-300 leading-relaxed max-w-2xl font-light"
             >
               From beautifully crafted braids to stunning lashes and custom outfits,
-              <strong className="text-[#2B160E] font-semibold"> SOMMY XBELLA </strong>
+              <strong className="text-[#2B160E] dark:text-white font-semibold"> SOMMY XBELLA </strong>
               helps you express your beauty and personal style with effortless confidence.
             </motion.p>
 
@@ -91,17 +95,17 @@ export const Hero: React.FC = () => {
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 href="#booking"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#D47A5B] text-white font-semibold text-sm tracking-wider uppercase hover:bg-[#BF6545] active:bg-[#A95437] transition-all duration-200 shadow-md hover:shadow-xl whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#D47A5B] dark:bg-[#D4A64A] text-white dark:text-black font-semibold text-sm tracking-wider uppercase hover:bg-[#BF6545] dark:hover:bg-[#E7C275] active:bg-[#A95437] transition-all duration-200 shadow-md hover:shadow-xl whitespace-nowrap"
               >
                 <span>Book Your Appointment</span>
-                <ArrowRight className="w-4 h-4 text-white" />
+                <ArrowRight className="w-4 h-4 text-current" />
               </motion.a>
 
               <motion.a
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-[#E29578] bg-[#FFFFFF]/70 backdrop-blur-xs text-[#2B160E] hover:text-[#D47A5B] hover:border-[#D47A5B] hover:bg-[#FFFFFF] transition-all duration-200 text-sm font-medium tracking-wide shadow-xs whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-[#E29578] dark:border-neutral-700 bg-[#FFFFFF]/70 dark:bg-neutral-900/80 backdrop-blur-xs text-[#2B160E] dark:text-white hover:text-[#D47A5B] dark:hover:text-[#D4A64A] hover:border-[#D47A5B] dark:hover:border-[#D4A64A] hover:bg-[#FFFFFF] dark:hover:bg-neutral-800 transition-all duration-200 text-sm font-medium tracking-wide shadow-xs whitespace-nowrap"
               >
                 <span>Explore Our Services</span>
               </motion.a>
@@ -112,14 +116,14 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="pt-6 border-t border-[#F0D5C4] flex flex-wrap items-center gap-y-2 gap-x-4 sm:gap-x-6 text-xs text-[#846658]"
+              className="pt-6 border-t border-[#F0D5C4] dark:border-neutral-800 flex flex-wrap items-center gap-y-2 gap-x-4 sm:gap-x-6 text-xs text-[#846658] dark:text-neutral-400"
             >
               <span className="font-medium">Braids & Hair Styling</span>
-              <span className="text-[#D47A5B]" aria-hidden="true">·</span>
+              <span className="text-[#D47A5B] dark:text-[#D4A64A]" aria-hidden="true">·</span>
               <span className="font-medium">Cluster Lashes</span>
-              <span className="text-[#D47A5B]" aria-hidden="true">·</span>
+              <span className="text-[#D47A5B] dark:text-[#D4A64A]" aria-hidden="true">·</span>
               <span className="font-medium">Eyebrow Trimming</span>
-              <span className="text-[#D47A5B]" aria-hidden="true">·</span>
+              <span className="text-[#D47A5B] dark:text-[#D4A64A]" aria-hidden="true">·</span>
               <span className="font-medium">Custom Outfits</span>
             </motion.div>
           </motion.div>
@@ -136,12 +140,12 @@ export const Hero: React.FC = () => {
               <motion.div
                 animate={{ rotate: [-1, 1, -1] }}
                 transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -inset-3 sm:-inset-4 rounded-[2rem] border border-[#E29578]/40 pointer-events-none"
+                className="absolute -inset-3 sm:-inset-4 rounded-[2rem] border border-[#E29578]/40 dark:border-neutral-800 pointer-events-none"
                 aria-hidden="true"
               />
 
               {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-hidden bg-[#FDF1E8] border-2 border-[#E29578]/50 shadow-xl aspect-[3/4] group">
+              <div className="relative rounded-3xl overflow-hidden bg-[#FDF1E8] dark:bg-neutral-950 border-2 border-[#E29578]/50 dark:border-neutral-800 shadow-xl aspect-[3/4] group">
                 <img
                   src={heroBraidsImg || '/images/hero_braids_portrait_1792341019972.jpg'}
                   onError={(e) => {
@@ -155,21 +159,38 @@ export const Hero: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
 
+                {/* Official Brand Seal Badge */}
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.5, type: 'spring', stiffness: 350, damping: 20 }}
+                  className="absolute top-4 right-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/90 backdrop-blur-md border border-[#D4A64A]/60 shadow-lg text-white"
+                >
+                  <img
+                    src={logoImg || '/images/logo.jpg'}
+                    alt="SOMMY XBELLA Certified"
+                    className="w-5 h-5 rounded-full object-cover border border-[#D4A64A]"
+                  />
+                  <span className="text-[10px] font-brand-display tracking-widest text-[#FFF4E4] font-semibold">
+                    SOMMY XBELLA
+                  </span>
+                </motion.div>
+
                 {/* Subtle soft gradient scrim at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2B160E]/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2B160E]/70 dark:from-black/90 via-transparent to-transparent pointer-events-none" />
 
                 {/* Image Overlay Glass Badge */}
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
-                  className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#FFFFFF]/90 backdrop-blur-md border border-[#F0D5C4] shadow-lg flex items-center justify-between"
+                  className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#FFFFFF]/90 dark:bg-[#0A0A0A]/90 backdrop-blur-md border border-[#F0D5C4] dark:border-neutral-800 shadow-lg flex items-center justify-between"
                 >
                   <div>
-                    <p className="text-[11px] uppercase tracking-wider text-[#A95437] font-bold">
+                    <p className="text-[11px] uppercase tracking-wider text-[#A95437] dark:text-[#D4A64A] font-bold">
                       Signature Styling
                     </p>
-                    <p className="text-sm font-serif font-bold text-[#2B160E]">
+                    <p className="text-sm font-serif font-bold text-[#2B160E] dark:text-white">
                       Knotless Braids & Glow
                     </p>
                   </div>

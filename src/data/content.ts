@@ -7,6 +7,7 @@ import galleryBohoImg from '../assets/images/gallery_braids_boho_1792341040142.j
 import galleryLashesNaturalImg from '../assets/images/gallery_lashes_natural_1792341040036.jpg';
 import galleryCoutureImg from '../assets/images/gallery_outfit_couture_1792341041500.jpg';
 import aboutStylistImg from '../assets/images/about_stylist_portrait_1792341041595.jpg';
+import logoImg from '../assets/images/logo.jpg';
 
 export {
   heroBraidsImg,
@@ -18,6 +19,7 @@ export {
   galleryLashesNaturalImg,
   galleryCoutureImg,
   aboutStylistImg,
+  logoImg,
 };
 
 export interface ServiceItem {

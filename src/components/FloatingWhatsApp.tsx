@@ -16,7 +16,7 @@ export const FloatingWhatsApp: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
             transition={{ duration: 0.18 }}
-            className="hidden sm:block px-3.5 py-1.5 rounded-full bg-[#FFFFFF] text-[#2B160E] border border-[#F0D5C4] text-xs font-medium shadow-xl pointer-events-none"
+            className="hidden sm:block px-3.5 py-1.5 rounded-full bg-[#FFFFFF] dark:bg-[#0A0A0A] text-[#2B160E] dark:text-white border border-[#F0D5C4] dark:border-neutral-800 text-xs font-medium shadow-xl pointer-events-none"
           >
             Chat with SOMMY XBELLA
           </motion.div>

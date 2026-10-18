@@ -1,7 +1,7 @@
 import React from 'react';
 import { MessageCircle, Phone, Instagram, Facebook, ArrowUp } from 'lucide-react';
 import { motion } from 'motion/react';
-import { BRAND_PHONE, BRAND_PHONE_CLEAN, SERVICES, WHATSAPP_BASE_URL } from '../data/content';
+import { BRAND_PHONE, BRAND_PHONE_CLEAN, SERVICES, WHATSAPP_BASE_URL, logoImg } from '../data/content';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -9,14 +9,25 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#2B160E] text-[#FFF7F2] border-t border-[#D47A5B]/30 relative">
+    <footer className="bg-[#2B160E] dark:bg-[#000000] text-[#FFF7F2] border-t border-[#D47A5B]/30 dark:border-neutral-800 relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-[#43251A]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-[#43251A] dark:border-neutral-800">
           {/* Brand Info (Cols 1-5) */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full border border-[#D47A5B] flex items-center justify-center bg-[#3D2016] text-[#F9D2BD] font-serif font-bold text-lg">
-                SX
+              <div className="w-12 h-12 rounded-full border-2 border-[#D47A5B] dark:border-[#D4A64A] overflow-hidden bg-black shadow-md shrink-0">
+                <img
+                  src={logoImg || '/images/logo.jpg'}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== '/images/logo.jpg') {
+                      target.src = '/images/logo.jpg';
+                    }
+                  }}
+                  alt="SOMMY XBELLA Logo"
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
               </div>
               <span className="font-brand-display text-xl font-bold tracking-[0.2em] text-[#FFF7F2]">
                 SOMMY XBELLA
@@ -113,7 +124,7 @@ export const Footer: React.FC = () => {
                 href={WHATSAPP_BASE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#3D2016] border border-[#D47A5B]/40 flex items-center justify-center text-[#F9D2BD] hover:text-white hover:border-[#F5C7B0] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#3D2016] dark:bg-neutral-900 border border-[#D47A5B]/40 dark:border-neutral-700 flex items-center justify-center text-[#F9D2BD] hover:text-white hover:border-[#F5C7B0] transition-colors"
                 aria-label="SOMMY XBELLA on WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -122,7 +133,7 @@ export const Footer: React.FC = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 href={`tel:+${BRAND_PHONE_CLEAN}`}
-                className="w-9 h-9 rounded-full bg-[#3D2016] border border-[#D47A5B]/40 flex items-center justify-center text-[#F9D2BD] hover:text-white hover:border-[#F5C7B0] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#3D2016] dark:bg-neutral-900 border border-[#D47A5B]/40 dark:border-neutral-700 flex items-center justify-center text-[#F9D2BD] hover:text-white hover:border-[#F5C7B0] transition-colors"
                 aria-label="Call SOMMY XBELLA"
               >
                 <Phone className="w-4 h-4" />
@@ -133,7 +144,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#3D2016] border border-[#D47A5B]/40 flex items-center justify-center text-[#F9D2BD] hover:text-white hover:border-[#F5C7B0] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#3D2016] dark:bg-neutral-900 border border-[#D47A5B]/40 dark:border-neutral-700 flex items-center justify-center text-[#F9D2BD] hover:text-white hover:border-[#F5C7B0] transition-colors"
                 aria-label="SOMMY XBELLA on Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -144,7 +155,7 @@ export const Footer: React.FC = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#3D2016] border border-[#D47A5B]/40 flex items-center justify-center text-[#F9D2BD] hover:text-white hover:border-[#F5C7B0] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#3D2016] dark:bg-neutral-900 border border-[#D47A5B]/40 dark:border-neutral-700 flex items-center justify-center text-[#F9D2BD] hover:text-white hover:border-[#F5C7B0] transition-colors"
                 aria-label="SOMMY XBELLA on Facebook"
               >
                 <Facebook className="w-4 h-4" />
