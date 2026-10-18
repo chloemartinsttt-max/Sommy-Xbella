@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-peach-canvas: #FFF7F2;
+  --color-brand-peach-soft: #FDF1E8;
+  --color-brand-peach-light: #FBF0E8;
+  --color-brand-peach-card: #FFFFFF;
+  --color-brand-peach-border: #F3DDD0;
+  --color-brand-peach-primary: #D47A5B;
+  --color-brand-peach-hover: #BF6545;
+  --color-brand-peach-dark: #A95437;
+  --color-brand-peach-accent: #E29578;
+  --color-brand-gold: #C58550;
+  --color-brand-ivory: #FFFBF8;
+  --color-brand-text-dark: #2B160E;
+  --color-brand-text-body: #55392D;
+  --color-brand-text-muted: #846658;
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #FFF7F2;
+    color: #2B160E;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  h1, h2, h3, .font-serif-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #2B160E;
+  }
+
+  .font-brand-display {
+    font-family: 'Cinzel', Georgia, serif;
+  }
+}
+
+/* Subtle luxury peach gradients & shadows */
+.peach-gradient-text {
+  background: linear-gradient(135deg, #2B160E 0%, #D47A5B 60%, #C58550 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.peach-gradient-card {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F4 100%);
+}
+
+.luxury-card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(180, 115, 85, 0.12), 0 2px 8px -2px rgba(180, 115, 85, 0.06);
+}
+
+.luxury-card-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.luxury-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -10px rgba(180, 115, 85, 0.2), 0 0 1px 1px rgba(212, 122, 91, 0.3);
+}
+

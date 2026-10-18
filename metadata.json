@@ -1,0 +1,6 @@
+{
+  "name": "SOMMY XBELLA | Luxury Beauty & Custom Styling",
+  "description": "Premium beauty and fashion brand specializing in braids, hair styling, cluster lashes, eyebrow trimming, dressmaking, and custom outfits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
