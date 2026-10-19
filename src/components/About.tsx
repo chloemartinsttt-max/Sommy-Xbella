@@ -25,11 +25,11 @@ export const About: React.FC = () => {
 
               <div className="relative rounded-3xl overflow-hidden bg-[#FDF1E8] dark:bg-neutral-950 border-2 border-[#E29578]/50 dark:border-neutral-800 shadow-xl aspect-[4/5] group">
                 <img
-                  src={aboutStylistImg || '/images/about_stylist_portrait_1792341041595.jpg'}
+                  src={aboutStylistImg || '/images/about_stylist_black_1792441925776.jpg'}
                   onError={(e) => {
                     const target = e.currentTarget;
-                    if (target.src !== '/images/about_stylist_portrait_1792341041595.jpg') {
-                      target.src = '/images/about_stylist_portrait_1792341041595.jpg';
+                    if (target.src !== '/images/about_stylist_black_1792441925776.jpg') {
+                      target.src = '/images/about_stylist_black_1792441925776.jpg';
                     }
                   }}
                   alt="SOMMY XBELLA founder and stylist in the beauty and styling atelier"

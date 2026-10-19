@@ -19,7 +19,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '' }) => {
       type="button"
       className={`relative p-2.5 rounded-full border transition-colors focus:outline-none focus:ring-2 focus:ring-[#D47A5B] dark:focus:ring-[#D4A64A] flex items-center justify-center ${
         isDark
-          ? 'bg-[#351707] border-[#D4A64A]/40 text-[#D4A64A] hover:bg-[#43200C] hover:border-[#D4A64A]'
+          ? 'bg-neutral-900 border-neutral-700 text-[#D4A64A] hover:bg-neutral-800 hover:border-[#D4A64A]'
           : 'bg-[#FDF1E8] border-[#F0D5C4] text-[#D47A5B] hover:bg-[#FBE6DA] hover:border-[#D47A5B]'
       } ${className}`}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}

@@ -1,12 +1,12 @@
-import heroBraidsImg from '../assets/images/hero_braids_portrait_1792341019972.jpg';
-import serviceBraidsImg from '../assets/images/service_braids_styling_1792341020284.jpg';
-import serviceLashesImg from '../assets/images/service_cluster_lashes_1792341021139.jpg';
-import serviceBrowsImg from '../assets/images/service_eyebrow_trimming_1792341020651.jpg';
-import serviceOutfitsImg from '../assets/images/service_custom_outfits_1792341021374.jpg';
-import galleryBohoImg from '../assets/images/gallery_braids_boho_1792341040142.jpg';
-import galleryLashesNaturalImg from '../assets/images/gallery_lashes_natural_1792341040036.jpg';
-import galleryCoutureImg from '../assets/images/gallery_outfit_couture_1792341041500.jpg';
-import aboutStylistImg from '../assets/images/about_stylist_portrait_1792341041595.jpg';
+import heroBraidsImg from '../assets/images/hero_model_braids_1792441907713.jpg';
+import serviceBraidsImg from '../assets/images/service_braids_black_1792441922916.jpg';
+import serviceLashesImg from '../assets/images/service_lashes_black_1792441922259.jpg';
+import serviceBrowsImg from '../assets/images/service_brows_black_1792441924439.jpg';
+import serviceOutfitsImg from '../assets/images/service_outfit_black_1792441923902.jpg';
+import galleryBohoImg from '../assets/images/gallery_boho_black_1792441924466.jpg';
+import galleryLashesNaturalImg from '../assets/images/service_lashes_black_1792441922259.jpg';
+import galleryCoutureImg from '../assets/images/service_outfit_black_1792441923902.jpg';
+import aboutStylistImg from '../assets/images/about_stylist_black_1792441925776.jpg';
 import logoImg from '../assets/images/logo.jpg';
 
 export {
@@ -66,7 +66,7 @@ export const SERVICES: ServiceItem[] = [
     name: 'Braids & Hair Styling',
     description: 'Beautiful braids and carefully styled hair to complement your personality, occasion, and individual taste.',
     image: serviceBraidsImg,
-    fallbackImage: '/images/service_braids_styling_1792341020284.jpg',
+    fallbackImage: '/images/service_braids_black_1792441922916.jpg',
     highlights: [
       'Knotless & Box Braids',
       'Bohemian & Goddess Braids',
@@ -82,7 +82,7 @@ export const SERVICES: ServiceItem[] = [
     name: 'Cluster Lashes',
     description: 'Enhance your eyes with beautiful cluster lashes for a soft, natural, or glamorous finish.',
     image: serviceLashesImg,
-    fallbackImage: '/images/service_cluster_lashes_1792341021139.jpg',
+    fallbackImage: '/images/service_lashes_black_1792441922259.jpg',
     highlights: [
       'Soft Natural Day Look',
       'Wispy Hybrid Volume',
@@ -98,7 +98,7 @@ export const SERVICES: ServiceItem[] = [
     name: 'Eyebrow Trimming',
     description: 'Keep your brows neat, defined, and beautifully shaped to complement your features.',
     image: serviceBrowsImg,
-    fallbackImage: '/images/service_eyebrow_trimming_1792341020651.jpg',
+    fallbackImage: '/images/service_brows_black_1792441924439.jpg',
     highlights: [
       'Precision Brow Architecture',
       'Razor & Razor-Sharp Finish',
@@ -114,7 +114,7 @@ export const SERVICES: ServiceItem[] = [
     name: 'Dressmaking & Custom Outfits',
     description: 'Bring your fashion ideas to life with custom outfits designed around your style and preferences.',
     image: serviceOutfitsImg,
-    fallbackImage: '/images/service_custom_outfits_1792341021374.jpg',
+    fallbackImage: '/images/service_outfit_black_1792441923902.jpg',
     highlights: [
       'Bespoke Tailoring & Measurements',
       'Evening Gowns & Celebration Wear',
@@ -134,7 +134,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'hair',
     categoryLabel: 'Braids & Styling',
     image: serviceBraidsImg,
-    fallbackImage: '/images/service_braids_styling_1792341020284.jpg',
+    fallbackImage: '/images/service_braids_black_1792441922916.jpg',
     description: 'Intricately parted goddess braids adorned with champagne gold cuffs and soft cascading curls.',
   },
   {
@@ -143,7 +143,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'hair',
     categoryLabel: 'Braids & Styling',
     image: galleryBohoImg,
-    fallbackImage: '/images/gallery_braids_boho_1792341040142.jpg',
+    fallbackImage: '/images/gallery_boho_black_1792441924466.jpg',
     description: 'Romantic half-up crown styling featuring chocolate and caramel boho curls.',
   },
   {
@@ -152,7 +152,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'hair',
     categoryLabel: 'Braids & Styling',
     image: heroBraidsImg,
-    fallbackImage: '/images/hero_braids_portrait_1792341019972.jpg',
+    fallbackImage: '/images/hero_model_braids_1792441907713.jpg',
     description: 'Featherlight, precision-parted knotless braids designed for everyday effortless glamour.',
   },
   {
@@ -161,7 +161,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'lashes-brows',
     categoryLabel: 'Cluster Lashes',
     image: serviceLashesImg,
-    fallbackImage: '/images/service_cluster_lashes_1792341021139.jpg',
+    fallbackImage: '/images/service_lashes_black_1792441922259.jpg',
     description: 'Dimensional cluster lash extensions offering full flutter with weightless comfort.',
   },
   {
@@ -170,7 +170,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'lashes-brows',
     categoryLabel: 'Cluster Lashes',
     image: galleryLashesNaturalImg,
-    fallbackImage: '/images/gallery_lashes_natural_1792341040036.jpg',
+    fallbackImage: '/images/service_lashes_black_1792441922259.jpg',
     description: 'Delicate cluster extensions accentuating the natural eye contour for seamless beauty.',
   },
   {
@@ -179,7 +179,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'lashes-brows',
     categoryLabel: 'Eyebrow Grooming',
     image: serviceBrowsImg,
-    fallbackImage: '/images/service_eyebrow_trimming_1792341020651.jpg',
+    fallbackImage: '/images/service_brows_black_1792441924439.jpg',
     description: 'Clean, tailored eyebrow shaping aligned with natural facial symmetry and bone structure.',
   },
   {
@@ -188,7 +188,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'fashion',
     categoryLabel: 'Custom Outfits',
     image: galleryCoutureImg,
-    fallbackImage: '/images/gallery_outfit_couture_1792341041500.jpg',
+    fallbackImage: '/images/service_outfit_black_1792441923902.jpg',
     description: 'Dramatic occasion silhouette crafted with African luxury brocade and gold detailing.',
   },
   {
@@ -197,7 +197,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'fashion',
     categoryLabel: 'Custom Outfits',
     image: serviceOutfitsImg,
-    fallbackImage: '/images/service_custom_outfits_1792341021374.jpg',
+    fallbackImage: '/images/service_outfit_black_1792441923902.jpg',
     description: 'Hand-draped couture silhouette tailored to measure in the SOMMY XBELLA atelier.',
   },
 ];

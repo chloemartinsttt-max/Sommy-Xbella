@@ -147,11 +147,11 @@ export const Hero: React.FC = () => {
               {/* Main Image Container */}
               <div className="relative rounded-3xl overflow-hidden bg-[#FDF1E8] dark:bg-neutral-950 border-2 border-[#E29578]/50 dark:border-neutral-800 shadow-xl aspect-[3/4] group">
                 <img
-                  src={heroBraidsImg || '/images/hero_braids_portrait_1792341019972.jpg'}
+                  src={heroBraidsImg || '/images/hero_model_braids_1792441907713.jpg'}
                   onError={(e) => {
                     const target = e.currentTarget;
-                    if (target.src !== '/images/hero_braids_portrait_1792341019972.jpg') {
-                      target.src = '/images/hero_braids_portrait_1792341019972.jpg';
+                    if (target.src !== '/images/hero_model_braids_1792441907713.jpg') {
+                      target.src = '/images/hero_model_braids_1792441907713.jpg';
                     }
                   }}
                   alt="Model showcasing signature SOMMY XBELLA goddess braids with golden accents"
