@@ -7,6 +7,7 @@ import galleryBohoImg from '../assets/images/gallery_boho_black_1792441924466.jp
 import galleryLashesNaturalImg from '../assets/images/service_lashes_black_1792441922259.jpg';
 import galleryCoutureImg from '../assets/images/service_outfit_black_1792441923902.jpg';
 import aboutStylistImg from '../assets/images/about_stylist_black_1792441925776.jpg';
+import sommyPhotoImg from '../assets/images/sommy_founder.jpg';
 import logoImg from '../assets/images/logo.jpg';
 
 export {
@@ -19,6 +20,7 @@ export {
   galleryLashesNaturalImg,
   galleryCoutureImg,
   aboutStylistImg,
+  sommyPhotoImg,
   logoImg,
 };
 
