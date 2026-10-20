@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calendar, Phone } from 'lucide-react';
+import { Menu, X, Calendar, Phone, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BRAND_PHONE, logoImg } from '../data/content';
 import { ThemeToggle } from './ThemeToggle';
@@ -63,6 +63,17 @@ export const Navbar: React.FC = () => {
                 Beauty & Custom Styling
               </span>
             </div>
+
+            {/* Slogan Pill with subtle motion */}
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.05 }}
+              className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDF1E8]/90 dark:bg-neutral-900 border border-[#F0D5C4] dark:border-neutral-800 text-[11px] font-serif italic text-[#D47A5B] dark:text-[#D4A64A] shadow-xs"
+            >
+              <Sparkles className="w-3 h-3 text-[#D47A5B] dark:text-[#D4A64A] animate-pulse" />
+              <span>&ldquo;Beauty In Every Detail&rdquo;</span>
+            </motion.div>
           </a>
 
           {/* Navigation Links (Zone 2) */}
@@ -166,6 +177,14 @@ export const Navbar: React.FC = () => {
                   Beauty · Hair · Fashion
                 </span>
               </div>
+            </div>
+
+            {/* Slogan Banner in Mobile Drawer */}
+            <div className="py-2 px-3 rounded-xl bg-gradient-to-r from-[#FDF1E8] to-[#FFF7F2] dark:from-neutral-900 dark:to-neutral-950 border border-[#F0D5C4] dark:border-neutral-800 text-center shadow-xs">
+              <p className="font-serif italic text-xs text-[#D47A5B] dark:text-[#D4A64A] flex items-center justify-center gap-1.5 font-medium">
+                <Sparkles className="w-3 h-3 text-[#D47A5B] dark:text-[#D4A64A] animate-pulse" />
+                <span>&ldquo;Beauty In Every Detail&rdquo;</span>
+              </p>
             </div>
 
             <div className="flex flex-col space-y-2 text-base font-medium text-[#2B160E] dark:text-neutral-200">

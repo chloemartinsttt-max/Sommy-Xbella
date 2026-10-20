@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Phone, Instagram, Facebook, ArrowUp } from 'lucide-react';
+import { MessageCircle, Phone, Instagram, Facebook, ArrowUp, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 import { BRAND_PHONE, BRAND_PHONE_CLEAN, SERVICES, WHATSAPP_BASE_URL, logoImg } from '../data/content';
 
@@ -11,6 +11,26 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#2B160E] dark:bg-[#000000] text-[#FFF7F2] border-t border-[#D47A5B]/30 dark:border-neutral-800 relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        {/* Grand Typography Motion Ribbon in Footer */}
+        <div className="py-8 mb-12 border-b border-[#43251A] dark:border-neutral-800 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex flex-col items-center space-y-2"
+          >
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#D4A64A] font-semibold">
+              <Sparkles className="w-3.5 h-3.5 text-[#D4A64A] animate-pulse" />
+              <span>The SOMMY XBELLA Signature</span>
+              <Sparkles className="w-3.5 h-3.5 text-[#D4A64A] animate-pulse" />
+            </div>
+            <h3 className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#FFF7F2] font-normal tracking-wide">
+              &ldquo;Beauty In Every Detail&rdquo;
+            </h3>
+            <div className="w-28 h-0.5 bg-gradient-to-r from-transparent via-[#D4A64A] to-transparent mx-auto mt-2" />
+          </motion.div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-[#43251A] dark:border-neutral-800">
           {/* Brand Info (Cols 1-5) */}
           <div className="lg:col-span-5 space-y-4">
@@ -42,6 +62,15 @@ export const Footer: React.FC = () => {
             <p className="text-xs italic text-[#F5C7B0] font-serif">
               "Beauty That Speaks for Itself."
             </p>
+
+            <div className="pt-1">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#D8BDB0] font-semibold block">
+                Official Motto
+              </span>
+              <p className="text-base sm:text-lg font-serif italic text-[#D4A64A] font-medium tracking-wide">
+                &ldquo;Beauty In Every Detail&rdquo;
+              </p>
+            </div>
 
             {/* Direct WhatsApp Callout */}
             <div className="pt-2 flex items-center gap-2">

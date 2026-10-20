@@ -82,6 +82,9 @@ export const About: React.FC = () => {
                     <p className="text-xs text-[#55392D] dark:text-neutral-300 mt-0.5 font-light leading-snug truncate">
                       Braids Stylist • Lash Artist • Bespoke Fashion
                     </p>
+                    <p className="text-[10px] font-serif italic text-[#D47A5B] dark:text-[#D4A64A] mt-0.5">
+                      &ldquo;Beauty In Every Detail&rdquo;
+                    </p>
                   </div>
                 </div>
               </div>
@@ -133,9 +136,14 @@ export const About: React.FC = () => {
               <p className="text-sm sm:text-base italic font-serif text-[#2B160E] dark:text-neutral-200">
                 &ldquo;Every woman deserves to experience the confidence that comes with impeccable styling. We don&rsquo;t just do beauty — we create moments of radiant self-love.&rdquo;
               </p>
-              <p className="text-xs font-semibold text-[#A95437] dark:text-[#D4A64A] mt-2 uppercase tracking-wider">
-                — Sommy, Founder & Master Stylist
-              </p>
+              <div className="flex flex-wrap items-center justify-between gap-2 mt-2 pt-2 border-t border-[#F0D5C4]/60 dark:border-neutral-800/60">
+                <p className="text-xs font-semibold text-[#A95437] dark:text-[#D4A64A] uppercase tracking-wider">
+                  — Sommy, Founder & Master Stylist
+                </p>
+                <span className="font-serif italic text-xs text-[#D47A5B] dark:text-[#D4A64A] font-medium">
+                  &ldquo;Beauty In Every Detail&rdquo;
+                </span>
+              </div>
             </div>
 
             {/* Core Values Bullets */}

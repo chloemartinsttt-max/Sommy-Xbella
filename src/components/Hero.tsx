@@ -45,19 +45,41 @@ export const Hero: React.FC = () => {
             className="lg:col-span-7 flex flex-col justify-center space-y-8 text-left"
           >
             {/* Elegant Tagline with Brand Logo */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-neutral-900/90 backdrop-blur-xs border border-[#F0D5C4] dark:border-neutral-800 shadow-xs w-fit"
-            >
-              <div className="w-5 h-5 rounded-full overflow-hidden border border-[#D47A5B] dark:border-[#D4A64A] shrink-0 bg-black">
-                <img src={logoImg || '/images/logo.jpg'} alt="SOMMY XBELLA" className="w-full h-full object-cover" />
-              </div>
-              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#A95437] dark:text-[#D4A64A]">
-                SOMMY XBELLA Atelier & Beauty Studio
-              </span>
-            </motion.div>
+            <div className="flex flex-wrap items-center gap-3">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-neutral-900/90 backdrop-blur-xs border border-[#F0D5C4] dark:border-neutral-800 shadow-xs w-fit"
+              >
+                <div className="w-5 h-5 rounded-full overflow-hidden border border-[#D47A5B] dark:border-[#D4A64A] shrink-0 bg-black">
+                  <img src={logoImg || '/images/logo.jpg'} alt="SOMMY XBELLA" className="w-full h-full object-cover" />
+                </div>
+                <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#A95437] dark:text-[#D4A64A]">
+                  SOMMY XBELLA Atelier
+                </span>
+              </motion.div>
+
+              {/* Slogan Motion Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.04 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#FDF1E8] via-[#FFF7F2] to-[#FCE8DC] dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-900 border border-[#E29578]/50 dark:border-[#D4A64A]/40 shadow-xs cursor-default"
+              >
+                <motion.span
+                  animate={{ rotate: [0, 15, -15, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                  className="inline-block"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A]" />
+                </motion.span>
+                <span className="font-serif italic font-medium text-xs sm:text-sm tracking-wide text-[#A95437] dark:text-[#D4A64A]">
+                  &ldquo;Beauty In Every Detail&rdquo;
+                </span>
+              </motion.div>
+            </div>
 
             {/* Hero Headline */}
             <motion.h1
@@ -81,7 +103,8 @@ export const Hero: React.FC = () => {
             >
               From beautifully crafted braids to stunning lashes and custom outfits,
               <strong className="text-[#2B160E] dark:text-white font-semibold"> SOMMY XBELLA </strong>
-              helps you express your beauty and personal style with effortless confidence.
+              helps you express your beauty and personal style with effortless confidence — ensuring
+              <span className="italic font-serif font-normal text-[#D47A5B] dark:text-[#D4A64A]"> Beauty In Every Detail</span>.
             </motion.p>
 
             {/* CTA Action Buttons with micro-motions */}
@@ -192,6 +215,9 @@ export const Hero: React.FC = () => {
                     </p>
                     <p className="text-sm font-serif font-bold text-[#2B160E] dark:text-white">
                       Knotless Braids & Glow
+                    </p>
+                    <p className="text-[10px] font-serif italic text-[#D47A5B] dark:text-[#D4A64A] mt-0.5">
+                      &ldquo;Beauty In Every Detail&rdquo;
                     </p>
                   </div>
                   <motion.a

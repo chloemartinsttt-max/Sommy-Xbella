@@ -52,6 +52,18 @@ export const Gallery: React.FC = () => {
             Explore a curated selection of our braiding artistry, cluster lash enhancements,
             brow precision, and custom-tailored occasion attire. Click any image for a closer view.
           </p>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 dark:bg-neutral-900/80 border border-[#F0D5C4] dark:border-neutral-800 shadow-xs cursor-default"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A] animate-pulse" />
+            <span className="font-serif italic text-xs sm:text-sm text-[#A95437] dark:text-[#D4A64A] tracking-wide font-medium">
+              &ldquo;Beauty In Every Detail&rdquo;
+            </span>
+          </motion.div>
         </motion.div>
 
         {/* Filter Controls (Interactive Segmented Buttons with Motion Layout) */}

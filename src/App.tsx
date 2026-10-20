@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { SloganTicker } from './components/SloganTicker';
 import { Services } from './components/Services';
 import { Gallery } from './components/Gallery';
 import { WhyChoose } from './components/WhyChoose';
@@ -26,6 +27,9 @@ export default function App() {
         {/* Hero Section */}
         <Hero />
 
+        {/* Infinite Luxury Slogan Marquee */}
+        <SloganTicker variant="primary" />
+
         {/* Services Section */}
         <Services onSelectServiceForBooking={handleSelectService} />
 
@@ -34,6 +38,9 @@ export default function App() {
 
         {/* Why Choose SOMMY XBELLA */}
         <WhyChoose />
+
+        {/* Secondary Chic Slogan Ribbon */}
+        <SloganTicker variant="subtle" />
 
         {/* About Us Section */}
         <About />

@@ -6,6 +6,7 @@ import serviceOutfitsImg from '../assets/images/service_outfit_black_17924419239
 import galleryBohoImg from '../assets/images/gallery_boho_black_1792441924466.jpg';
 import galleryLashesNaturalImg from '../assets/images/service_lashes_black_1792441922259.jpg';
 import galleryCoutureImg from '../assets/images/service_outfit_black_1792441923902.jpg';
+import customDressBurgundyImg from '../assets/images/custom_couture_burgundy.png';
 import aboutStylistImg from '../assets/images/about_stylist_black_1792441925776.jpg';
 import sommyPhotoImg from '../assets/images/sommy_founder.jpg';
 import logoImg from '../assets/images/logo.jpg';
@@ -19,6 +20,7 @@ export {
   galleryBohoImg,
   galleryLashesNaturalImg,
   galleryCoutureImg,
+  customDressBurgundyImg,
   aboutStylistImg,
   sommyPhotoImg,
   logoImg,
@@ -195,12 +197,12 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'g-8',
-    title: 'Draped Champagne Satin Evening Gown',
+    title: 'Bespoke Beaded Burgundy Couture Dress',
     category: 'fashion',
     categoryLabel: 'Custom Outfits',
-    image: serviceOutfitsImg,
-    fallbackImage: '/images/service_outfit_black_1792441923902.jpg',
-    description: 'Hand-draped couture silhouette tailored to measure in the SOMMY XBELLA atelier.',
+    image: customDressBurgundyImg || '/assets/aistudio/image_62e6851b.png',
+    fallbackImage: '/assets/aistudio/image_62e6851b.png',
+    description: 'Bespoke luxury cocktail dress in deep burgundy featuring intricate crystal bead fringe trim and tailored button detailing.',
   },
 ];
 
