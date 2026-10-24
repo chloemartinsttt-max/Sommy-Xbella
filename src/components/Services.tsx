@@ -10,9 +10,30 @@ interface ServicesProps {
 export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking }) => {
   return (
     <section id="services" className="py-24 bg-[#FBF0E8] dark:bg-[#050505] relative overflow-hidden transition-colors duration-300">
-      {/* Delicate hairline borders */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#E29578]/30 dark:via-neutral-800 to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#E29578]/30 dark:via-neutral-800 to-transparent" />
+      {/* Delicate hairline borders with smooth continuous shimmer */}
+      <motion.div
+        animate={{ opacity: [0.3, 0.8, 0.3] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#E29578]/50 dark:via-[#D4A64A]/40 to-transparent"
+      />
+      <motion.div
+        animate={{ opacity: [0.3, 0.8, 0.3] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+        className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#E29578]/50 dark:via-[#D4A64A]/40 to-transparent"
+      />
+
+      {/* Soft ambient continuous background glow */}
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.15, 0.35, 0.15],
+          x: [15, -15, 15],
+          y: [-10, 10, -10],
+        }}
+        transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/2 right-0 w-[450px] h-[450px] bg-[#FDE2D2] dark:bg-[#D4A64A]/5 rounded-full blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -24,7 +45,13 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
           className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 space-y-4"
         >
           <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.22em] text-[#A95437] dark:text-[#D4A64A] font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A]" />
+            <motion.span
+              animate={{ rotate: 360 }}
+              transition={{ duration: 16, repeat: Infinity, ease: 'linear' }}
+              className="inline-block"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A]" />
+            </motion.span>
             <span>Crafted for Elegance</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#2B160E] dark:text-white tracking-tight">
@@ -36,6 +63,14 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
             and gentle care to accentuate your natural beauty and individual style.
           </p>
           <motion.div
+            animate={{
+              scale: [1, 1.025, 1],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

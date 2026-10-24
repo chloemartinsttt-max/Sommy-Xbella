@@ -9,29 +9,33 @@ export const Hero: React.FC = () => {
       {/* Decorative ambient background glows */}
       <motion.div
         animate={{
-          scale: [1, 1.08, 1],
-          opacity: [0.35, 0.55, 0.35],
+          scale: [1, 1.15, 1],
+          opacity: [0.35, 0.6, 0.35],
+          x: [-15, 15, -15],
+          y: [-10, 10, -10],
         }}
         transition={{
-          duration: 8,
+          duration: 9,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#FDE2D2] dark:bg-[#D4A64A]/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#FDE2D2] dark:bg-[#D4A64A]/10 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"
       />
       <motion.div
         animate={{
-          scale: [1, 1.12, 1],
-          opacity: [0.3, 0.5, 0.3],
+          scale: [1, 1.2, 1],
+          opacity: [0.25, 0.45, 0.25],
+          x: [12, -12, 12],
+          y: [8, -8, 8],
         }}
         transition={{
-          duration: 10,
+          duration: 11,
           repeat: Infinity,
           ease: 'easeInOut',
           delay: 1,
         }}
-        className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[#FCD7C2] dark:bg-neutral-900/30 rounded-full blur-2xl pointer-events-none"
+        className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[#FCD7C2] dark:bg-neutral-900/40 rounded-full blur-2xl pointer-events-none"
         aria-hidden="true"
       />
 
@@ -158,17 +162,21 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative mx-auto max-w-md lg:max-w-none"
+            >
               {/* Outer Decorative Peach Frame Ring */}
               <motion.div
-                animate={{ rotate: [-1, 1, -1] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                animate={{ rotate: [-1.5, 1.5, -1.5], scale: [1, 1.015, 1] }}
+                transition={{ duration: 8.5, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -inset-3 sm:-inset-4 rounded-[2rem] border border-[#E29578]/40 dark:border-neutral-800 pointer-events-none"
                 aria-hidden="true"
               />
 
               {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-hidden bg-[#FDF1E8] dark:bg-neutral-950 border-2 border-[#E29578]/50 dark:border-neutral-800 shadow-xl aspect-[3/4] group">
+              <div className="relative rounded-3xl overflow-hidden bg-[#FDF1E8] dark:bg-neutral-950 border-2 border-[#E29578]/50 dark:border-neutral-800 shadow-2xl aspect-[3/4] group">
                 <img
                   src={heroBraidsImg || '/images/hero_model_braids_1792441907713.jpg'}
                   onError={(e) => {
@@ -182,11 +190,22 @@ export const Hero: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
 
-                {/* Official Brand Seal Badge */}
+                {/* Official Brand Seal Badge with continuous gentle glow */}
                 <motion.div
                   initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.5, type: 'spring', stiffness: 350, damping: 20 }}
+                  animate={{
+                    scale: [1, 1.03, 1],
+                    boxShadow: [
+                      '0 0 10px rgba(212,166,74,0.25)',
+                      '0 0 22px rgba(212,166,74,0.55)',
+                      '0 0 10px rgba(212,166,74,0.25)',
+                    ],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                   className="absolute top-4 right-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/90 backdrop-blur-md border border-[#D4A64A]/60 shadow-lg text-white"
                 >
                   <img
@@ -234,7 +253,7 @@ export const Hero: React.FC = () => {
                   </motion.a>
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

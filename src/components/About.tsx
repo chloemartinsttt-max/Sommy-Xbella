@@ -6,6 +6,19 @@ import { getWhatsAppUrl, sommyPhotoImg, logoImg } from '../data/content';
 export const About: React.FC = () => {
   return (
     <section id="about" className="py-24 bg-[#FFF7F2] dark:bg-[#000000] relative overflow-hidden transition-colors duration-300">
+      {/* Ambient continuous luxury glow orb */}
+      <motion.div
+        animate={{
+          scale: [1, 1.25, 1],
+          opacity: [0.2, 0.45, 0.2],
+          x: [-20, 20, -20],
+          y: [-15, 15, -15],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-[#FDE2D2] dark:bg-[#D4A64A]/8 rounded-full blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Sommy - Founder & Stylist Portrait */}
@@ -16,10 +29,16 @@ export const About: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 relative order-2 lg:order-1"
           >
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+            <motion.div
+              animate={{ y: [0, -7, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative mx-auto max-w-md lg:max-w-none"
+            >
               {/* Decorative layered chic frames */}
-              <div
-                className="absolute -inset-3 sm:-inset-4 rounded-3xl border-2 border-dashed border-[#E29578]/40 dark:border-[#D4A64A]/30 -rotate-2 pointer-events-none transition-transform duration-500"
+              <motion.div
+                animate={{ rotate: [-2, 1.5, -2], scale: [1, 1.015, 1] }}
+                transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -inset-3 sm:-inset-4 rounded-3xl border-2 border-dashed border-[#E29578]/40 dark:border-[#D4A64A]/30 pointer-events-none"
                 aria-hidden="true"
               />
               <div
@@ -88,7 +107,7 @@ export const About: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Column: Brand Story & Philosophy */}

@@ -30,8 +30,21 @@ export const Gallery: React.FC = () => {
   };
 
   return (
-    <section id="gallery" className="py-24 bg-[#FFF7F2] dark:bg-[#000000] relative transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="py-24 bg-[#FFF7F2] dark:bg-[#000000] relative overflow-hidden transition-colors duration-300">
+      {/* Ambient continuous luxury light orb */}
+      <motion.div
+        animate={{
+          scale: [1, 1.25, 1],
+          opacity: [0.15, 0.35, 0.15],
+          x: [-15, 15, -15],
+          y: [-12, 12, -12],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#FDE2D2] dark:bg-[#D4A64A]/6 rounded-full blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +54,13 @@ export const Gallery: React.FC = () => {
           className="text-center max-w-3xl mx-auto mb-14 space-y-4"
         >
           <div className="inline-flex items-center justify-center gap-1.5 text-xs uppercase tracking-[0.22em] text-[#A95437] dark:text-[#D4A64A] font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A]" />
+            <motion.span
+              animate={{ rotate: 360 }}
+              transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+              className="inline-block"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A]" />
+            </motion.span>
             <span>Our Portfolio</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#2B160E] dark:text-white tracking-tight">
@@ -53,6 +72,14 @@ export const Gallery: React.FC = () => {
             brow precision, and custom-tailored occasion attire. Click any image for a closer view.
           </p>
           <motion.div
+            animate={{
+              scale: [1, 1.025, 1],
+            }}
+            transition={{
+              duration: 4.2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

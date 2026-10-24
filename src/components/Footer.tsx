@@ -30,10 +30,18 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
               <span>The SOMMY XBELLA Signature</span>
               <Sparkles className="w-3.5 h-3.5 text-[#D4A64A] animate-pulse" />
             </div>
-            <h3 className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#FFF7F2] font-normal tracking-wide">
+            <motion.h3
+              animate={{ scale: [1, 1.015, 1] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#FFF7F2] font-normal tracking-wide"
+            >
               &ldquo;Beauty In Every Detail&rdquo;
-            </h3>
-            <div className="w-28 h-0.5 bg-gradient-to-r from-transparent via-[#D4A64A] to-transparent mx-auto mt-2" />
+            </motion.h3>
+            <motion.div
+              animate={{ width: ['7rem', '12rem', '7rem'], opacity: [0.6, 1, 0.6] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="h-0.5 bg-gradient-to-r from-transparent via-[#D4A64A] to-transparent mx-auto mt-2"
+            />
           </motion.div>
         </div>
 
