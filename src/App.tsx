@@ -9,8 +9,10 @@ import { About } from './components/About';
 import { BookingContact } from './components/BookingContact';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { MotionLoadingScreen } from './components/MotionLoadingScreen';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedServiceForBooking, setSelectedServiceForBooking] = useState<string>('Braids & Hair Styling');
 
   const handleSelectService = (serviceName: string) => {
@@ -19,6 +21,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FFF7F2] dark:bg-[#000000] text-[#2B160E] dark:text-[#F5F5F5] flex flex-col selection:bg-[#F5C7B0] dark:selection:bg-[#D4A64A] selection:text-[#2B160E] dark:selection:text-[#000000] transition-colors duration-300">
+      {/* 5-second Motion Loading Screen */}
+      {isLoading && (
+        <MotionLoadingScreen
+          durationSeconds={5}
+          onComplete={() => setIsLoading(false)}
+        />
+      )}
+
       {/* Navigation Bar */}
       <Navbar />
 
@@ -49,8 +59,8 @@ export default function App() {
         <BookingContact preselectedService={selectedServiceForBooking} />
       </main>
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer with Replay Intro option */}
+      <Footer onReplayIntro={() => setIsLoading(true)} />
 
       {/* Persistent Floating WhatsApp Quick Button */}
       <FloatingWhatsApp />
