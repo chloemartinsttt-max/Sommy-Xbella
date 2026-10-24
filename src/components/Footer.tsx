@@ -1,13 +1,15 @@
-import React from 'react';
-import { MessageCircle, Phone, Instagram, Facebook, ArrowUp, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { MessageCircle, Phone, Instagram, Facebook, ArrowUp, Sparkles, QrCode } from 'lucide-react';
 import { motion } from 'motion/react';
 import { BRAND_PHONE, BRAND_PHONE_CLEAN, SERVICES, WHATSAPP_BASE_URL, logoImg } from '../data/content';
+import { QRCodeModal } from './QRCodeModal';
 
 interface FooterProps {
   onReplayIntro?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
+  const [isQrOpen, setIsQrOpen] = useState(false);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -201,8 +203,18 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#D8BDB0]">
           <p>© 2026 SOMMY XBELLA. All rights reserved.</p>
 
-          <div className="flex items-center gap-5 sm:gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <span>By Appointment Only</span>
+            <span aria-hidden="true">·</span>
+            <button
+              type="button"
+              onClick={() => setIsQrOpen(true)}
+              className="inline-flex items-center gap-1.5 text-[#F5C7B0] hover:text-white transition-colors focus:outline-none cursor-pointer"
+              title="Open Salon QR Code"
+            >
+              <QrCode className="w-3.5 h-3.5 text-[#D4A64A]" />
+              <span>Salon QR Code</span>
+            </button>
             {onReplayIntro && (
               <>
                 <span aria-hidden="true">·</span>
@@ -212,7 +224,7 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
                   className="inline-flex items-center gap-1.5 text-[#D4A64A] hover:text-[#FFF2D1] transition-colors focus:outline-none cursor-pointer"
                   title="Replay Motion Loading Screen"
                 >
-                  <Sparkles className="w-3 h-3 text-[#D4A64A]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#D4A64A]" />
                   <span>Replay Intro</span>
                 </button>
               </>
@@ -228,6 +240,9 @@ export const Footer: React.FC<FooterProps> = ({ onReplayIntro }) => {
           </div>
         </div>
       </div>
+
+      {/* Salon QR Code Modal */}
+      <QRCodeModal isOpen={isQrOpen} onClose={() => setIsQrOpen(false)} />
     </footer>
   );
 };

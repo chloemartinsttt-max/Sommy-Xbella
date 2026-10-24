@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calendar, Phone, Sparkles } from 'lucide-react';
+import { Menu, X, Calendar, Phone, Sparkles, QrCode } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BRAND_PHONE, logoImg } from '../data/content';
 import { ThemeToggle } from './ThemeToggle';
+import { QRCodeModal } from './QRCodeModal';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isQrModalOpen, setIsQrModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,6 +114,19 @@ export const Navbar: React.FC = () => {
 
           {/* Primary Action Button & Theme Toggle (Zone 3) */}
           <div className="hidden md:flex items-center gap-3 shrink-0">
+            {/* QR Code Modal Trigger */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsQrModalOpen(true)}
+              type="button"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-[#FDF1E8] dark:bg-neutral-900 border border-[#F0D5C4] dark:border-neutral-800 text-[#55392D] dark:text-[#D4A64A] hover:text-[#D47A5B] dark:hover:text-white transition-colors text-xs font-semibold shadow-xs cursor-pointer"
+              title="Open Salon QR Code"
+            >
+              <QrCode className="w-3.5 h-3.5" />
+              <span>QR Code</span>
+            </motion.button>
+
             {/* Theme Toggle Button */}
             <ThemeToggle />
 
@@ -127,8 +142,18 @@ export const Navbar: React.FC = () => {
             </motion.a>
           </div>
 
-          {/* Mobile Right Controls: Theme Toggle + Book + Menu Hamburger */}
+          {/* Mobile Right Controls: QR + Theme Toggle + Book + Menu Hamburger */}
           <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={() => setIsQrModalOpen(true)}
+              type="button"
+              className="p-2 rounded-full bg-[#FDF1E8] dark:bg-neutral-900 border border-[#F0D5C4] dark:border-neutral-800 text-[#55392D] dark:text-[#D4A64A] cursor-pointer"
+              title="Open Salon QR Code"
+              aria-label="Open Salon QR Code"
+            >
+              <QrCode className="w-3.5 h-3.5" />
+            </button>
+
             <ThemeToggle />
 
             <a
@@ -234,6 +259,17 @@ export const Navbar: React.FC = () => {
                 <Calendar className="w-4 h-4 text-current" />
                 Book an Appointment
               </a>
+              <button
+                type="button"
+                onClick={() => {
+                  closeMenu();
+                  setIsQrModalOpen(true);
+                }}
+                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full border border-[#E29578] dark:border-neutral-700 bg-white dark:bg-neutral-900 text-[#2B160E] dark:text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#FDF1E8] dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+              >
+                <QrCode className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A]" />
+                <span>Salon QR Code Card</span>
+              </button>
               <div className="flex items-center justify-center gap-2 text-xs text-[#846658] dark:text-neutral-400">
                 <Phone className="w-3.5 h-3.5 text-[#D47A5B] dark:text-[#D4A64A]" />
                 <span>WhatsApp / Call: {BRAND_PHONE}</span>
@@ -242,6 +278,9 @@ export const Navbar: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Branded QR Code Modal */}
+      <QRCodeModal isOpen={isQrModalOpen} onClose={() => setIsQrModalOpen(false)} />
     </motion.header>
   );
 };
